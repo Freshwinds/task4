@@ -10,7 +10,7 @@ loadPromotions:
 3.建立类（7min）
 input:null
 output:null
-function Ietm(bracode,name,unit,count,price）：（string,string,string,number,number）
+function Ietm(bracode,name,unit,count,price,count）：（string,string,string,number,number,number）
 4.将输入的数组转换成数组类(7min)//7min
 input:item_information:               
 output:items[Item]
