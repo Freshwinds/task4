@@ -140,25 +140,18 @@ function printReceipt(items,all_sum,save_sum, load_promotions) {
     str+="***<没钱赚商店>收据***\n";
     for(var i=0;i<items.length;i++)
     {
+
         if(items[i].count!=0) {
-            str += "名称：";
-            str += String(items[i].name);
-            str += ", 数量：";
-            str += String(items[i].count);
-            str += String(items[i].unit);
-            str += ", 单价：";
-            str += String(items[i].price.toFixed(2));
-            str += "(元), 小计：";
+           str+=`名称：${items[i].name}, 数量：${items[i].count}${items[i].unit}, 单价：${Number(items[i].price).toFixed(2)}(元), 小计：`;
             if(items[i].count<2 || items[i].promotion!=1)
-                str += String((items[i].count*items[i].price).toFixed(2) + "(元)\n");
+                str += String(Number(items[i].count*items[i].price).toFixed(2) + "(元)\n");
             else
-                str += String(((items[i].count-1)*items[i].price).toFixed(2) + "(元)\n");
+                str += String(Number((items[i].count-1)*items[i].price).toFixed(2) + "(元)\n");
         }
     }
-    str+="----------------------\n总计：";
-
-    str+=String(all_sum.toFixed(2)+"(元)\n");
-    str+="节省: "+save_sum.toFixed(2)+"(元)\n";
+   str+="----------------------\n总计：";
+    str+=String(Number(all_sum).toFixed(2)+"(元)\n");
+    str+="节省: "+Number(save_sum).toFixed(2)+"(元)\n";
     str+="**********************";
     return str;
 }
